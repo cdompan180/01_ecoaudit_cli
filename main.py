@@ -26,9 +26,7 @@ while True:
         print("\n[OPCIÓN 1] Iniciando proceso de auditoría...")
 
         try:
-            num_iter = int(
-                input("Introduzca el número de iteraciones: ").strip()
-            )
+            num_iter = int(input("Introduzca el número de iteraciones: ").strip())
         except ValueError:
             print("⚠️ Error de formato: debe introducir un número entero.")
             continue
@@ -36,9 +34,7 @@ while True:
         if num_iter <= 0:
             print("⚠️ El valor debe ser mayor que cero.")
         else:
-            print(
-                f"✔️ Configurado con éxito para {num_iter} iteraciones."
-            )
+            print(f"✔️ Configurado con éxito para {num_iter} iteraciones.")
 
     
     elif opcion == 2:
