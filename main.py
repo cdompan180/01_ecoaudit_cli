@@ -3,6 +3,8 @@
 # Autores: Carmen y Cristina
 # =====================================================================
 
+from calculadora import estimar_consumo_wh, calcular_huella_co2
+
 while True:
     print("\n=========================================")
     print(" 🌿 ECOAUDIT CLI - MENÚ PRINCIPAL 🌿 ")
@@ -36,6 +38,15 @@ while True:
         else:
             print(f"✔️ Configurado con éxito para {num_iter} iteraciones.")
 
+        if opcion == 1:
+         
+         print("\n--- AUDITORÍA ENERGÉTICA ---")
+        proceso = input("Nombre del equipo/proceso: ").strip()
+        potencia = float(input("Potencia consumida en Vatios (W): "))
+        horas = float(input("Horas de uso diario: "))
+    
+
+
     
     elif opcion == 2:
         print("\n[OPCIÓN 2] Consultando registros históricos...")
@@ -48,3 +59,14 @@ while True:
     
     else:
         print("⚠️ Opción no válida. Elija un número entre 1 y 3.")
+
+
+
+    consumo = estimar_consumo_wh(potencia, horas, num_iter)
+    
+    
+    huella = calcular_huella_co2(consumo)
+    
+    print(f"\n✅ Resultados calculados para '{proceso}':")
+    print(f"   • Consumo total: {consumo:.2f} Wh")
+    print(f"   • Huella de carbono estimada: {huella:.4f} g CO2")
