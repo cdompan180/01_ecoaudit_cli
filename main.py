@@ -45,6 +45,17 @@ while True:
                 print("⚠️ Error de formato: debe introducir valores numéricos válidos.")
                 continue
 
+            # SIMULACIÓN ITERATIVA PASO A PASO (PARA INSPECCIÓN EN DEPURADOR)
+            print("\nIniciando simulación ciclo a ciclo...")
+            consumo_ciclo = estimar_consumo_wh(potencia, horas, 1) # Consumo de un solo ciclo
+            consumo_acumulado = 0.0
+            ciclo = 1
+
+            while ciclo <= num_iter:
+                consumo_acumulado = consumo_acumulado + consumo_ciclo # <--- PONDRÉIS AQUÍ EL PUNTO ROJO
+                print(f" [Ciclo {ciclo}] Consumo acumulado parcial: {consumo_acumulado:.2f} Wh")
+                ciclo = ciclo + 1
+
             # Cálculos y guardado en archivo
             consumo = estimar_consumo_wh(potencia, horas, num_iter)
             huella = calcular_huella_co2(consumo)
