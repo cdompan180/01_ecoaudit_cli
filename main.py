@@ -2,7 +2,6 @@
 # EcoAudit CLI - Módulo Principal
 # Autores: Carmen y Cristina
 # =====================================================================
-
 from calculadora import estimar_consumo_wh, calcular_huella_co2
 
 while True:
@@ -84,3 +83,4 @@ while True:
 
     else:
         print("⚠️ Opción no válida. Elija un número entre 1 y 3.")
+
